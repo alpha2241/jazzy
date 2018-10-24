@@ -11,6 +11,27 @@ const demo = rewire('../lib/demo');
 describe("demo",()=>{
 
     context("demo",()=>{
+           it('testing callback',(done)=>{
+            demo.addCallback(1,2,(err,res)=>{
+                expect(err).to.not.exist;
+                expect(res).to.equal(3);
+                done();
+            })
+        })
+           it('testing callback1',(done)=>{
+            demo.addCallback(1,4,(err,res)=>{
+                expect(err).to.not.exist;
+                expect(res).to.equal(3);
+                done();
+            })
+        })
+           it('testing callback',(done)=>{
+            demo.addCallback(1,1,(err,res)=>{
+                expect(err).to.not.exist;
+                expect(res).to.equal(3);
+                done();
+            })
+        })
 
         it('testing add function',()=>{
             expect(demo.add(1,2)).to.equal(3);
